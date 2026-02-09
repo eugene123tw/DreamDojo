@@ -1,0 +1,93 @@
+{
+    "state": {
+        "left_arm_joint_position": {
+            "start": 0,
+            "end": 7
+        },
+        "right_arm_joint_position": {
+            "start": 7,
+            "end": 14
+        },
+        "left_effector_position": {
+            "start": 14,
+            "end": 15
+        },
+        "right_effector_position": {
+            "start": 15,
+            "end": 16
+        },
+        "head_position": {
+            "start": 16,
+            "end": 18
+        },
+        "waist_position": {
+            "start": 18,
+            "end": 20
+        },
+        "waist_pitch": {
+            "start": 18,
+            "end": 19
+        },
+        "waist_lift": {
+            "start": 19,
+            "end": 20
+        }
+    },
+    "action": {
+        "left_arm_joint_position": {
+            "start": 0,
+            "end": 7
+        },
+        "right_arm_joint_position": {
+            "start": 7,
+            "end": 14
+        },
+        "left_effector_position": {
+            "start": 14,
+            "end": 15
+        },
+        "right_effector_position": {
+            "start": 15,
+            "end": 16
+        },
+        "head_position": {
+            "start": 16,
+            "end": 18
+        },
+        "waist_position": {
+            "start": 18,
+            "end": 20
+        },
+        "waist_pitch": {
+            "start": 18,
+            "end": 19
+        },
+        "waist_lift": {
+            "start": 19,
+            "end": 20
+        },
+        "robot_velocity": {
+            "start": 20,
+            "end": 22
+        }
+    },
+    "video": {
+        "top_head_pad_res256_freq10": {
+            "original_key": "observation.images.top_head"
+        },
+        "hand_left_pad_res256_freq10": {
+            "original_key": "observation.images.hand_left"
+        },
+        "hand_right_pad_res256_freq10": {
+            "original_key": "observation.images.hand_right"
+        }
+    },
+    "annotation": {
+        "language.action_text": {
+            "original_key": "task_index"
+        },
+        "agibot.tasks": {
+            "original_key": "annotation.agibot.tasks"
+        }
+    }
+}

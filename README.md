@@ -1,154 +1,113 @@
-# __NVIDIA_OSS__ Standard Repo Template
+<img src="assets/banner.gif" width="100%"/>
 
-This README file is from the NVIDIA_OSS standard repo template of [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file). It provides a list of files in the PLC-OSS-Template and guidelines on how to use (clone and customize) them.
+<div align="center">
+  <p style="font-size: 1.2em;">
+    <a href="https://dreamdojo-world.github.io/"><strong>Website</strong></a> | 
+    <a href="https://arxiv.org/abs/2602.06949"><strong>Paper</strong></a> |
+    <strong>Models</strong> |
+    <strong>Eval Sets</strong>
+  </p>
+</div>
 
-**Upon completing the customization for the project repo, the repo admin should replace this README template with the project specific README file.**
+# 💭 DreamDojo
 
-- Files (org-wide templates in the NVIDIA .github org repo; per-repo overrides allowed) in [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file)
+## 🔥 Highlights
 
-   - Root 
-     - README.md skeleton (CTA + Quickstart + Support/Security/Governance links) 
-     - LICENSE (Apache 2.0 by default)
-        - For other licenses, see the [Confluence page](https://confluence.nvidia.com/pages/viewpage.action?pageId=788418816) for other licenses
-        - CLA.md file (delete if not using MIT or BSD licenses)
-     - CODE_OF_CONDUCT.md 
-     - SECURITY.md (vuln reporting path) 
-     - CONTRIBUTING.md (base; repo can add specifics)
-     - SUPPORT.md (Support levels/channels)
-     - GOVERNANCE.md (baseline; repo may extend)
-     - CITATION.md (for projects that need citation)
+*DreamDojo* is an interactive world model that learns from large-scale human videos. In short, we made the following key contributions:
 
-   - .github/ 
-     - ISSUE_TEMPLATE/ (<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository>)
-       - bug.yml, feature.yml, task.yml, config.yml 
-     - PULL_REQUEST_TEMPLATE.md (<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository>)
-     - workflows/
-     - Note: workflow-templates/ for starter workflows should live in the org-level .github repo, not per-repo
+- **A large-scale video dataset.** 44k hours of diverse human egocentric videos, the largest dataset to date for world model pretraining.
+- **A foundation world model.** The first robot world model of its kind that demonstrates strong generalization to diverse objects and environments after post-training.
+- **A distillation pipeline.** After distillation, our model can achieve long-horizon autoregressive generation, with stable real-time interactions at 10 FPS for over 1 minute.
 
-   - Repo-specific (not org-template, maintained by the team)
-     - CODEOWNERS (place at .github/CODEOWNERS or repo root)
-     - CHANGELOG.md (or RELEASE.md) 
-     - ROADMAP.md 
-     - MAINTAINERS.md 
-     - NOTICE or THIRD_PARTY_NOTICES / THIRD_PARTY_LICENSES (dependency specific)
-     - Build/package files (CMake, pyproject, Dockerfile, etc.)
+## 📢 News
 
-   - Recommended structure and hygiene
-     - docs/
-     - examples/
-     - tests/
-     - scripts/
-     - Container/dev env: Dockerfile, docker/, .devcontainer/ (optional)
-     - Build/package (language-specific):
-       - Python: pyproject.toml, setup.cfg/setup.py, requirements.txt, environment.yml
-       - C++: CMakeLists.txt, cmake/, vcpkg.json
-     - Repo hygiene: .gitignore, .gitattributes, .editorconfig, .pre-commit-config.yaml, .clang-format
+- **[2026/02/09]** We released both pretraining and post-training code.
+- **[2026/02/09]** We released our [paper](https://arxiv.org/abs/2602.06949) on arXiv.
 
+## 📋 Release Plan
 
-## Usage of [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file) for NEW NVIDIA OSS repos
+We anticipate completing all of the following items within this month.
 
-1. Clone the [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file)
-2. Find/replace all in the clone of `___PROJECT___` and `__PROJECT_NAME__` with the name of the specific project.
-3. Inspect all files to make sure all replacements work and update text as needed
+- [ ] Add DreamDojo-14B model config.
+- [ ] Release the latent action model and DreamDojo checkpoints.
+- [ ] Release the evaluation sets.
+- [ ] Complete instructions for dataset organization.
+- [ ] Release the distillation pipeline.
+- [ ] Release the teleoperation code.
+- [ ] Simplify the code structure.
 
+## 🕹️ Quick Start
 
-**What you can reuse immediately**
-- CODE_OF_CONDUCT.md
-- SECURITY.md
-- CONTRIBUTING.md (base)
-- .github/ISSUE_TEMPLATE/.yml (bug/feature/task + config.yml)
-- .github/PULL_REQUEST_TEMPLATE.md
-- Reusable workflows 
+### Installation
 
-**What you must customize per repo**
-- README.md: copy the skeleton and fill in product-specific details (Quickstart, Requirements, Usage, Support level, links)
-- LICENSE: check file is correct, update year, consult Confluence for alternatives https://confluence.nvidia.com/pages/viewpage.action?pageId=788418816, add CLA.md only if your license/process requires it
-- CODEOWNERS: replace <TEAM> with your GitHub team handle(s). Place at .github/CODEOWNERS (or repo root)
-- MAINTAINERS.md: list maintainers names/roles, escalation path
-- CHANGELOG.md (or RELEASE.md): track releases/changes
-- SUPPORT.md: Update for your project
-- ROADMAP.md (optional): upcoming milestones
-- NOTICE / THIRD_PARTY_NOTICES (if you ship third‑party content)
-- Build/package files (CMake/pyproject/Dockerfile/etc.), tests/, docs/, examples/, scripts/ as appropriate
-- Workflows: Edit if you need custom behavior 
+The current code is tested with [uv](https://docs.astral.sh/uv/). To install the environment with uv:
 
-
-4. Change git origin to point to new repo and push
-5. Remove the line break below and everything above it
-
-## Usage for existing NVIDIA OSS repos
-
-1. Follow the steps above, but add the files to your existing repo and merge
-
-<!-- REMOVE THE LINE BELOW AND EVERYTHING ABOVE -->
------------------------------------------
-# [Project Title]
-One-sentence value proposition for users. Who is it for, and why it matters. 
-
-# Overview
-What the project does? Why the project is useful?
-Provide a brief overview, highlighting key features or problem-solving capabilities.
-
-# Getting Started
-Guide users on how they can get started with the project. This should include basic installation step, quick-start examples 
 ```bash
-# Option A: Package manager (pip/conda/npm/etc.)
-<copy-paste install>
-
-# Option B: Container
-docker run <image> <args>
-
-# Verify (hello world)
-<one-liner or ~10-line example>
+bash install.sh
 ```
-# Requirements
-Include a list of pre-requisites. 
-- OS/Arch: <summary or link to full matrix>
-- Runtime/Compiler: <versions>
-- GPU/Drivers (if applicable): CUDA <ver>, driver <ver>, etc.
 
-# Usage
+### Latent Action Model Training
+
+Suppose you are training on 1 node with 8 GPUs:
+
 ```bash
-# Minimal runnable snippet (≤20 lines)
-<code>
+cd external/lam_project
+bash train.sh
 ```
-- More examples/tutorials: <link>
-- API reference: <link>
 
-# Performance (Optional)
-Summary of benchmarks; link to detailed results and hardware used.
+A multi-node training script example is provided at `external/lam_project/launch.sh`.
 
-## Releases & Roadmap 
-- Releases/Changelog: <link>
-- (Optional) Next milestones or link to `ROADMAP.md`.
-  
-# Contribution Guidelines
-- Start here: `CONTRIBUTING.md`
-- Code of Conduct: `CODE_OF_CONDUCT.md`
-- Development quickstart (build/test):
+### DreamDojo Pretraining
+
+Suppose you are training on 1 node with 8 GPUs:
+
+1. Make sure you have set the correct paths in `launch.sh`.
+2. Replace the `ckpt_path` in `cosmos_predict2/_src/predict2/models/text2world_model_rectified_flow.py` to the actual latent action model path.
+3. Launch DreamDojo pretraining by:
+    
+    ```bash
+    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_pretrain
+    ```
+
+### DreamDojo Post-Training
+
+The training configurations are managed by yaml under `configs`. To launch post-training:
+
+1. Follow the same setup as the pretraining.
+2. Change `load_path` in `cosmos_predict2/experiments/base/action.py` to the pretrained checkpoint and specify its training step.
+3. (Optional) Disable the extraction of latent actions on the fly, as it will be reset to zero.
+4. Send the desired experiment config (e.g., `groot_ac_reason_embeddings_rectified_flow_2b_480_640_gr1` to use `ab_480_640_gr1.yaml`).
+    
+    ```bash
+    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_gr1
+    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_g1
+    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_agibot
+    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_yam
+    ```
+
+### Evaluation
+
+When adapting to the target robot action space through post-training, you can keep tracking the performance of the checkpoints at a specified interval:
+
 ```bash
-<clone> && <deps> && <build/test>
+bash eval.sh
 ```
-## Governance & Maintainers
-- Governance: `GOVERNANCE.md`
-- Maintainers: <team/handles>
-- Labeling/triage policy: <link>
 
-## Security
-- Vulnerability disclosure: `SECURITY.md`
-- Do not file public issues for security reports.
+</details>
 
-## Support
-- Level: <Experimental | Maintained | Stable>
-- How to get help: Issues/Discussions/<channel link>
-- Response expectations (if any).
+## ⭐ Citation
 
-# Community
-Provide the channel for community communications.
+If you find our work useful, please consider citing us and giving a star to our repo.
 
-# References
-Provide a list of related references
+```bibtex
+@article{gao2026dreamdojo,
+    title={DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos},
+    author={Shenyuan Gao and William Liang and Kaiyuan Zheng and Ayaan Malik and Seonghyeon Ye and Sihyun Yu and Wei-Cheng Tseng and Yuzhu Dong and Kaichun Mo and Chen-Hsuan Lin and Qianli Ma and Seungjun Nah and Loic Magne and Jiannan Xiang and Yuqi Xie and Ruijie Zheng and Dantong Niu and You Liang Tan and K.R. Zentner and George Kurian and Suneel Indupuru and Pooya Jannaty and Jinwei Gu and Jun Zhang and Jitendra Malik and Pieter Abbeel and Ming-Yu Liu and Yuke Zhu and Joel Jang and Linxi "Jim" Fan},
+    journal={arXiv preprint arXiv:2602.06949},
+    year={2026}
+}
+```
 
-# License
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-- License: <link>
+## ⚖️ License
+
+DreamDojo source code is released under the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
