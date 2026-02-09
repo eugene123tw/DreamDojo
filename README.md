@@ -26,15 +26,13 @@
 
 ## 📋 Release Plan
 
-We anticipate completing all of the following items within this month.
+We aim to release the following items this month.
 
-- [ ] Add DreamDojo-14B model config.
-- [ ] Release the latent action model and DreamDojo checkpoints.
-- [ ] Release the evaluation sets.
-- [ ] Complete instructions for dataset organization.
-- [ ] Release the distillation pipeline.
-- [ ] Release the teleoperation code.
-- [ ] Simplify the code structure.
+- [ ] DreamDojo-14B model config.
+- [ ] Latent action model and DreamDojo checkpoints.
+- [ ] Evaluation sets.
+- [ ] Distillation pipeline.
+- [ ] Teleoperation code.
 
 ## 🕹️ Quick Start
 
