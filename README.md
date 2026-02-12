@@ -5,7 +5,7 @@
     <a href="https://dreamdojo-world.github.io/"><strong>Website</strong></a> | 
     <a href="https://arxiv.org/abs/2602.06949"><strong>Paper</strong></a> |
     <strong>Models</strong> |
-    <strong>Eval Sets</strong>
+    <strong>Datasets</strong>
   </p>
 </div>
 
@@ -31,6 +31,7 @@ We aim to release the following items this month.
 - [ ] DreamDojo-14B model config.
 - [ ] Latent action model and DreamDojo checkpoints.
 - [ ] Evaluation sets.
+- [ ] GR-1 post-training dataset.
 - [ ] Distillation pipeline.
 - [ ] Teleoperation code.
 
@@ -64,7 +65,7 @@ Suppose you are training on 1 node with 8 GPUs:
 3. Launch DreamDojo pretraining by:
     
     ```bash
-    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_pretrain
+    bash launch.sh dreamdojo_2b_480_640_pretrain
     ```
 
 ### DreamDojo Post-Training
@@ -74,13 +75,13 @@ The training configurations are managed by yaml under `configs`. To launch post-
 1. Follow the same setup as the pretraining.
 2. Change `load_path` in `cosmos_predict2/experiments/base/action.py` to the pretrained checkpoint and specify its training step.
 3. (Optional) Disable the extraction of latent actions on the fly, as it will be reset to zero.
-4. Send the desired experiment config (e.g., `groot_ac_reason_embeddings_rectified_flow_2b_480_640_gr1` to use `ab_480_640_gr1.yaml`).
+4. Send the desired experiment config (e.g., `dreamdojo_2b_480_640_gr1` to use `ab_480_640_gr1.yaml`).
     
     ```bash
-    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_gr1
-    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_g1
-    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_agibot
-    bash launch.sh groot_ac_reason_embeddings_rectified_flow_2b_480_640_yam
+    bash launch.sh dreamdojo_2b_480_640_gr1
+    bash launch.sh dreamdojo_2b_480_640_g1
+    bash launch.sh dreamdojo_2b_480_640_agibot
+    bash launch.sh dreamdojo_2b_480_640_yam
     ```
 
 ### Evaluation

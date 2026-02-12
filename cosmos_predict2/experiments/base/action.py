@@ -23,7 +23,7 @@ from cosmos_predict2.config import MODEL_CHECKPOINTS, ModelKey
 
 # Use the post-trained checkpoint which has the correct experiment reference
 DEFAULT_CHECKPOINT = MODEL_CHECKPOINTS[ModelKey(post_trained=False)]  # This uses post_trained=True by default
-# ModelKey(post_trained=False, size="14B")
+DEFAULT_CHECKPOINT_14B = MODEL_CHECKPOINTS[ModelKey(post_trained=False, size="14B")]
 
 
 def load_experiment_config(experiment_name: str, default_config: LazyDict) -> LazyDict:
@@ -187,8 +187,8 @@ for yaml_file in sorted(_configs_dir.glob("*.yaml")):
     # Extract experiment name (filename without .yaml extension)
     experiment_name = yaml_file.stem
     
-    # Create variable name following the pattern: groot_ac_reason_embeddings_rectified_flow_{experiment_name}
-    var_name = f"groot_ac_reason_embeddings_rectified_flow_{experiment_name}"
+    # Create variable name following the pattern: dreamdojo_{experiment_name}
+    var_name = f"dreamdojo_{experiment_name}"
     
     # Load the config and store in both dict and globals for backward compatibility
     config = load_experiment_config(experiment_name, _default_groot_config)

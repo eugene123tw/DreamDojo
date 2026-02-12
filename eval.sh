@@ -5,7 +5,7 @@ source /mnt/amlfs-01/shared/shenyuang/DreamDojo-release/.venv/bin/activate
 python examples/action_conditioned.py \
   -o outputs/action_conditioned/basic \
   --checkpoints-dir /mnt/amlfs-01/shared/shenyuang/cosmos_logs/exp1201/gr1/checkpoints \
-  --experiment groot_ac_reason_embeddings_rectified_flow_2b_480_640_gr1 \
+  --experiment dreamdojo_2b_480_640_gr1 \
   --save-dir /mnt/amlfs-01/shared/shenyuang/dreamdojo_results/gr1_unified_test \
   --num-frames 49 \
   --num-samples 100 \

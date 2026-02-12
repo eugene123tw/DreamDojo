@@ -1594,6 +1594,13 @@ class MiniTrainDIT(WeightTrainingStat):
         if self.extra_image_context_dim is not None:
             self.img_context_proj[0].reset_parameters()
 
+        zero_init = False
+        if zero_init and hasattr(self, "action_embedder_B_D") and hasattr(self, "action_embedder_B_3D"):
+            nn.init.zeros_(self.action_embedder_B_D.fc2.weight)
+            nn.init.zeros_(self.action_embedder_B_D.fc2.bias)
+            nn.init.zeros_(self.action_embedder_B_3D.fc2.weight)
+            nn.init.zeros_(self.action_embedder_B_3D.fc2.bias)
+
     def build_patch_embed(self):
         (
             concat_padding_mask,
