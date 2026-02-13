@@ -90,11 +90,11 @@ bridge_13frame_480_640_val_dataset = L(Dataset_3D)(
 
 dreamdojo_13frame_480_640_train_dataset = L(MultiVideoActionDataset)(
     num_frames=13,
-    dataset_path=["/mnt/amlfs-03/shared/datasets/gr1/gr1_unified_v1/0308/gr1_unified.RU0226RemoveStaticFreq20"],
+    dataset_path=["datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab"],
 )
 dreamdojo_13frame_480_640_val_dataset = L(MultiVideoActionDataset)(
     num_frames=13,
-    dataset_path=["/mnt/amlfs-03/shared/datasets/gr1/gr1_unified_v1/0308/gr1_unified.RU0226RemoveStaticFreq20"],
+    dataset_path=["datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab"],
 )
 
 

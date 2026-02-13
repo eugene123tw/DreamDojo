@@ -184,7 +184,7 @@ class Text2WorldModelRectifiedFlow(ImaginaireModel):
             lam_enc_blocks=24,
             lam_dec_blocks=24,
             lam_num_heads=16,
-            ckpt_path="/mnt/amlfs-01/shared/shenyuang/epoch=15-step=400000.ckpt",
+            ckpt_path="checkpoints/LAM/epoch=15-step=400000.ckpt",
         )
 
         # 7. training states

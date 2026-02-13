@@ -31,7 +31,7 @@ dataloader_train:
   dataset:
     num_frames: 13
     dataset_path:
-      - /mnt/amlfs-03/shared/datasets/gr1/gr1_unified_v1/0308/gr1_unified.RU0226RemoveStaticFreq20
+      - datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab
     data_split: train
     single_base_index: false
     deterministic_uniform_sampling: false

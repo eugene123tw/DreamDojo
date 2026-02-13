@@ -42,11 +42,11 @@ class ActionConditionedSetupArguments(CommonSetupArguments):
     # pyrefly: ignore  # invalid-annotation
     model: get_model_literal(ModelVariant.ROBOT_ACTION_COND) = DEFAULT_MODEL_KEY.name
 
-    checkpoints_dir: str = "/mnt/amlfs-01/shared/shenyuang/cosmos_logs/exp1201/gr1/checkpoints"
+    checkpoints_dir: str = "checkpoints/exp1201/gr1/checkpoints"
     save_dir: str = "results/action2world"
     num_frames: int = 37
     num_samples: int = 100
-    dataset_path: str = "/mnt/amlfs-03/shared/datasets/gr1/gr1_unified_v1/0308/gr1_unified.RU0226RemoveStaticFreq20"
+    dataset_path: str = "datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab"
     data_split: str = "test"
     single_base_index: bool = False
     deterministic_uniform_sampling: bool = False
