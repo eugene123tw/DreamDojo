@@ -28,7 +28,6 @@
 
 We aim to release the following items this month.
 
-- [ ] DreamDojo-14B model config.
 - [ ] Latent action model and DreamDojo checkpoints.
 - [ ] Evaluation sets.
 - [ ] GR-1 post-training dataset.
@@ -41,6 +40,7 @@ We aim to release the following items this month.
 - [Latent Action Model Training](https://github.com/NVIDIA/DreamDojo/blob/main/docs/LAM.md)
 - [DreamDojo Pretraining](https://github.com/NVIDIA/DreamDojo/blob/main/docs/PRETRAIN.md)
 - [DreamDojo Post-Training](https://github.com/NVIDIA/DreamDojo/blob/main/docs/POSTTRAIN.md)
+- [DreamDojo Distillation](https://github.com/NVIDIA/DreamDojo/blob/main/docs/DISTILL.md)
 - [Evaluation](https://github.com/NVIDIA/DreamDojo/blob/main/docs/EVAL.md)
 - [Trouble Shooting](https://github.com/NVIDIA/DreamDojo/blob/main/docs/ISSUES.md)
 

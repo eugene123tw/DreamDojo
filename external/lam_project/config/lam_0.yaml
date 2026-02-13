@@ -20,26 +20,13 @@ model:
 data:
   batch_size: 20
   dataset_paths:
-    - /mnt/amlfs-03/shared/datasets/gr1/gr1_unified_v1/0308/gr1_unified.RU0226RemoveStaticFreq20
-    - /mnt/amlfs-03/shared/datasets/gear_humanoid/joelj/0911/gr1_unified.inhouse_human_only
-    - /mnt/amlfs-03/shared/datasets/egodex/part1
-    - /mnt/amlfs-03/shared/datasets/egodex/part2
-    - /mnt/amlfs-03/shared/datasets/egodex/part3
-    - /mnt/amlfs-03/shared/datasets/egodex/part4
-    - /mnt/amlfs-03/shared/datasets/egodex/part5
-    - /mnt/amlfs-02/shared/datasets/dreamdojo_hv_lerobot_20s_final
-    - /mnt/amlfs-02/shared/datasets/standardized_v1/g1
-    - /mnt/amlfs-02/shared/datasets/standardized_v1/yam_v5
-    - /mnt/amlfs-03/shared/datasets/agibot-custom-converted-0829-fullres
-    - /mnt/amlfs-03/shared/datasets/agibot-custom-converted-1104-fullres
-    - /mnt/amlfs-03/shared/datasets/agibot-custom-converted-1104-diverse-fullres
-    - /mnt/amlfs-03/shared/datasets/agibot-custom-converted-1113-diverse-fullres
+    - datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab
   padding: repeat
   randomize: true
   num_frames: 2
   output_format: t h w c
   samples_per_epoch: 10000000
-  sampling_strategy: manual
+  sampling_strategy: dataset
 
 trainer:
   max_epochs: 1000

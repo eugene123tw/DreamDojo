@@ -1,10 +1,16 @@
 # Setup
 
-The current code is tested with [uv](https://docs.astral.sh/uv/). To install the environment with uv:
+### Environment
 
-```bash
+The current code is tested with NVIDIA H100 80GB. We use [uv](https://docs.astral.sh/uv/) to manage the environment. We provide a bash script for quick installation.
+
+```
 bash install.sh
 ```
+
+### Dataset
+
+In this release, we provide the GR-1 post-training dataset along with evaluation sets as example datasets for training and inference. The datasets can be downloaded from [Hugging Face]() and can be placed in or linked to the `datasets` directory.
 
 ---
 

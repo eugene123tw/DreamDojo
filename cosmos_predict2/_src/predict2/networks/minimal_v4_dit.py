@@ -1486,6 +1486,7 @@ class MiniTrainDIT(WeightTrainingStat):
         natten_parameters: Union[dict, list] = None,
         # if True, will closely match wan's strategy to use fp32 in certain layers/operations
         use_wan_fp32_strategy: bool = False,
+        zero_init_action_embedder: bool = False,
     ) -> None:
         super().__init__()
         self.max_img_h = max_img_h
@@ -1526,6 +1527,7 @@ class MiniTrainDIT(WeightTrainingStat):
         self.use_crossattn_projection = use_crossattn_projection
         self.crossattn_proj_in_channels = crossattn_proj_in_channels
         self.use_wan_fp32_strategy = use_wan_fp32_strategy
+        self.zero_init_action_embedder = zero_init_action_embedder
 
         self.blocks = nn.ModuleList(
             [
@@ -1594,8 +1596,7 @@ class MiniTrainDIT(WeightTrainingStat):
         if self.extra_image_context_dim is not None:
             self.img_context_proj[0].reset_parameters()
 
-        zero_init = False
-        if zero_init and hasattr(self, "action_embedder_B_D") and hasattr(self, "action_embedder_B_3D"):
+        if self.zero_init_action_embedder and hasattr(self, "action_embedder_B_D") and hasattr(self, "action_embedder_B_3D"):
             nn.init.zeros_(self.action_embedder_B_D.fc2.weight)
             nn.init.zeros_(self.action_embedder_B_D.fc2.bias)
             nn.init.zeros_(self.action_embedder_B_3D.fc2.weight)

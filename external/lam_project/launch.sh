@@ -22,10 +22,10 @@ export LD_PRELOAD=""  # Clear any preloaded libraries
 
 echo "Running on $NNODES nodes with $NPROC processes per node. This node rank is $NODE_RANK."
 
-export PYTHONPATH=/mnt/amlfs-01/shared/shenyuang/DreamDojo-release/external/lam_project:$PYTHONPATH
+export PYTHONPATH=/mnt/amlfs-01/shared/shenyuang/DreamDojo/external/lam_project:$PYTHONPATH
 export OMP_NUM_THREADS=8
 
-source /mnt/amlfs-01/shared/shenyuang/DreamDojo-release/.venv/bin/activate
+source /mnt/amlfs-01/shared/shenyuang/DreamDojo/.venv/bin/activate
 
 torchrun \
     --nnodes=$NNODES \

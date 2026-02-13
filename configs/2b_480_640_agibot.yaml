@@ -23,6 +23,7 @@ model:
       action_dim: 384
       temporal_compression_ratio: 4
       num_action_per_chunk: 12
+      zero_init_action_embedder: false
 
 dataloader_train:
   batch_size: 4

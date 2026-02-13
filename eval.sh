@@ -1,6 +1,6 @@
-export PYTHONPATH=/mnt/amlfs-01/shared/shenyuang/DreamDojo-release:$PYTHONPATH
+export PYTHONPATH=/mnt/amlfs-01/shared/shenyuang/DreamDojo:$PYTHONPATH
 export HF_HOME=/mnt/amlfs-01/shared/shenyuang/cosmos_cache
-source /mnt/amlfs-01/shared/shenyuang/DreamDojo-release/.venv/bin/activate
+source /mnt/amlfs-01/shared/shenyuang/DreamDojo/.venv/bin/activate
 
 python examples/action_conditioned.py \
   -o outputs/action_conditioned/basic \
@@ -9,7 +9,7 @@ python examples/action_conditioned.py \
   --save-dir /mnt/amlfs-01/shared/shenyuang/dreamdojo_results/gr1_unified_test \
   --num-frames 49 \
   --num-samples 100 \
-  --dataset-path /mnt/amlfs-03/shared/datasets/gr1/gr1_unified_v1/0308/gr1_unified.RU0226RemoveStaticFreq20 \
+  --dataset-path datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab \
   --data-split test \
   --deterministic-uniform-sampling \
   --checkpoint-interval 5000 \

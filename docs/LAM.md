@@ -1,13 +1,22 @@
 # Latent Action Model Training
 
-Suppose you are training on 1 node with 8 GPUs:
+The provided configuration only includes the GR-1 post-training dataset as an example. You can add new datasets by adding folders to `dataset_paths` by yourselves. The code will recursively search the folder and add any detected MP4 videos to the training set.
 
-```bash
+Using the following bash script to launch latent action training (suppose you are training on 1 node with 8 GPUs).
+
+```
 cd external/lam_project
 bash train.sh
 ```
 
-A multi-node training script example is provided at `external/lam_project/launch.sh`.
+A multi-node training script example is provided at `external/lam_project/launch.sh`. Add the index of the YAML file to specify the configuration to use.
+
+```
+bash launch.sh 0
+```
+
+> [!NOTE]
+> Our latent action model weights can be found at [Hugging Face]().
 
 ---
 

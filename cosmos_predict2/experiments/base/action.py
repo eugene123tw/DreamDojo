@@ -163,6 +163,7 @@ _default_groot_config = LazyDict(
                     action_dim=29,
                     temporal_compression_ratio=4,
                     num_action_per_chunk=12,
+                    zero_init_action_embedder=False,
                 ),
             ),
         ),

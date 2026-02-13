@@ -394,8 +394,8 @@ class MultiSourceSamplerDataset(Dataset):
         elif sampling_strategy == "pi":
             # Generate probabilities according to the scale of each dataset
             probs = [len(d) ** 0.43 for d in self.subsets]
-        elif sampling_strategy == "manual":
-            probs = [1, 1, 0.2, 0.2, 0.2, 0.2, 0.2, 10, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+        # elif sampling_strategy == "manual":
+        #     probs = [1, 1, 0.2, 0.2, 0.2, 0.2, 0.2, 10, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
         else:
             raise ValueError(f"Unavailable sampling strategy: {sampling_strategy}")
         total_prob = sum(probs)
