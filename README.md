@@ -21,7 +21,7 @@
 
 ## 📢 News
 
-- **[2026/02/09]** We released both pretraining and post-training code.
+- **[2026/02/13]** We released both pretraining and post-training code.
 - **[2026/02/09]** We released our [paper](https://arxiv.org/abs/2602.06949) on arXiv.
 
 ## 📋 Release Plan
@@ -37,62 +37,12 @@ We aim to release the following items this month.
 
 ## 🕹️ Quick Start
 
-### Installation
-
-The current code is tested with [uv](https://docs.astral.sh/uv/). To install the environment with uv:
-
-```bash
-bash install.sh
-```
-
-### Latent Action Model Training
-
-Suppose you are training on 1 node with 8 GPUs:
-
-```bash
-cd external/lam_project
-bash train.sh
-```
-
-A multi-node training script example is provided at `external/lam_project/launch.sh`.
-
-### DreamDojo Pretraining
-
-Suppose you are training on 1 node with 8 GPUs:
-
-1. Make sure you have set the correct paths in `launch.sh`.
-2. Replace the `ckpt_path` in `cosmos_predict2/_src/predict2/models/text2world_model_rectified_flow.py` to the actual latent action model path.
-3. Launch DreamDojo pretraining by:
-    
-    ```bash
-    bash launch.sh dreamdojo_2b_480_640_pretrain
-    ```
-
-### DreamDojo Post-Training
-
-The training configurations are managed by yaml under `configs`. To launch post-training:
-
-1. Follow the same setup as the pretraining.
-2. Change `load_path` in `cosmos_predict2/experiments/base/action.py` to the pretrained checkpoint and specify its training step.
-3. (Optional) Disable the extraction of latent actions on the fly, as it will be reset to zero.
-4. Send the desired experiment config (e.g., `dreamdojo_2b_480_640_gr1` to use `ab_480_640_gr1.yaml`).
-    
-    ```bash
-    bash launch.sh dreamdojo_2b_480_640_gr1
-    bash launch.sh dreamdojo_2b_480_640_g1
-    bash launch.sh dreamdojo_2b_480_640_agibot
-    bash launch.sh dreamdojo_2b_480_640_yam
-    ```
-
-### Evaluation
-
-When adapting to the target robot action space through post-training, you can keep tracking the performance of the checkpoints at a specified interval:
-
-```bash
-bash eval.sh
-```
-
-</details>
+- [Setup](https://github.com/NVIDIA/DreamDojo/blob/main/docs/SETUP.md)
+- [Latent Action Model Training](https://github.com/NVIDIA/DreamDojo/blob/main/docs/LAM.md)
+- [DreamDojo Pretraining](https://github.com/NVIDIA/DreamDojo/blob/main/docs/PRETRAIN.md)
+- [DreamDojo Post-Training](https://github.com/NVIDIA/DreamDojo/blob/main/docs/POSTTRAIN.md)
+- [Evaluation](https://github.com/NVIDIA/DreamDojo/blob/main/docs/EVAL.md)
+- [Trouble Shooting](https://github.com/NVIDIA/DreamDojo/blob/main/docs/ISSUES.md)
 
 ## ⭐ Citation
 
