@@ -46,7 +46,7 @@ class ActionConditionedSetupArguments(CommonSetupArguments):
     save_dir: str = "results/action2world"
     num_frames: int = 37
     num_samples: int = 100
-    dataset_path: str = "datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab"
+    dataset_path: str = "datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_post-train"
     data_split: str = "test"
     single_base_index: bool = False
     deterministic_uniform_sampling: bool = False

@@ -25,7 +25,7 @@ For simplicity of implementation, we set the dimension of the first action proje
 - [352, 384): Latent actions
 
 > [!NOTE]
-> The post-trained DreamDojo checkpoints for G1, GR-1, AgiBot, and YAM (2B and 14B) can be found at [Hugging Face]().
+> The post-trained DreamDojo checkpoints for G1, GR-1, AgiBot, and YAM (2B and 14B) can be found at [Hugging Face](https://huggingface.co/nvidia/DreamDojo).
 
 ---
 

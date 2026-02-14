@@ -9,7 +9,7 @@ python examples/action_conditioned.py \
   --save-dir /mnt/amlfs-01/shared/shenyuang/dreamdojo_results/gr1_unified_test \
   --num-frames 49 \
   --num-samples 100 \
-  --dataset-path datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_In-lab \
+  --dataset-path datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_post-train \
   --data-split test \
   --deterministic-uniform-sampling \
   --checkpoint-interval 5000 \

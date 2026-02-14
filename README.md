@@ -4,8 +4,8 @@
   <p style="font-size: 1.2em;">
     <a href="https://dreamdojo-world.github.io/"><strong>Website</strong></a> | 
     <a href="https://arxiv.org/abs/2602.06949"><strong>Paper</strong></a> |
-    <strong>Models</strong> |
-    <strong>Datasets</strong>
+    <a href="https://huggingface.co/nvidia/DreamDojo"><strong>Models</strong></a> |
+    <a href="https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-GR00T-Teleop-GR1"><strong>Datasets</strong></a>
   </p>
 </div>
 
@@ -28,9 +28,6 @@
 
 We aim to release the following items this month.
 
-- [ ] Latent action model and DreamDojo checkpoints.
-- [ ] Evaluation sets.
-- [ ] GR-1 post-training dataset.
 - [ ] Distillation pipeline.
 - [ ] Teleoperation code.
 

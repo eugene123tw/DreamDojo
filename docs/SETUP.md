@@ -10,7 +10,7 @@ bash install.sh
 
 ### Dataset
 
-In this release, we provide the GR-1 post-training dataset along with evaluation sets as example datasets for training and inference. The datasets can be downloaded from [Hugging Face]() and can be placed in or linked to the `datasets` directory.
+In this release, we provide the GR-1 post-training dataset along with evaluation sets as example datasets for training and inference. The datasets can be downloaded from [Hugging Face](https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-GR00T-Teleop-GR1) and can be placed in or linked to the `datasets` directory.
 
 ---
 

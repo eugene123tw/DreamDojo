@@ -11,7 +11,7 @@ We provide a launching script for DreamDojo pretraining (suppose you are trainin
     ```
 
 > [!NOTE]
-> The pretrained DreamDojo checkpoints (2B and 14B) can be found at [Hugging Face]().
+> The pretrained DreamDojo checkpoints (2B and 14B) can be found at [Hugging Face](https://huggingface.co/nvidia/DreamDojo).
 
 ---
 

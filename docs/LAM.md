@@ -16,7 +16,7 @@ bash launch.sh 0
 ```
 
 > [!NOTE]
-> Our latent action model weights can be found at [Hugging Face]().
+> Our latent action model weights can be found at [Hugging Face](https://huggingface.co/nvidia/DreamDojo). To set the path to your own checkpoint for proxy action extraction, check `https://github.com/NVIDIA/DreamDojo/blob/main/cosmos_predict2/_src/predict2/models/text2world_model_rectified_flow.py`.
 
 ---
 
