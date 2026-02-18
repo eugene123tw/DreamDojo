@@ -171,7 +171,7 @@ _default_groot_config = LazyDict(
             batch_size=4,
             dataset=dict(
                 num_frames=13,
-                dataset_path="datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_post-train",
+                dataset_path="datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR_robot",
                 data_split="train",
             ),
         ),

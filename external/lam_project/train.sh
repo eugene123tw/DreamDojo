@@ -1,3 +1,5 @@
+source /mnt/amlfs-01/shared/shenyuang/DreamDojo/.venv/bin/activate
+
 torchrun \
     --nnodes=1 \
     --nproc_per_node=8 \

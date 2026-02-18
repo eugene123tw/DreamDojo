@@ -184,7 +184,7 @@ class Text2WorldModelRectifiedFlow(ImaginaireModel):
             lam_enc_blocks=24,
             lam_dec_blocks=24,
             lam_num_heads=16,
-            ckpt_path="checkpoints/LAM.ckpt",
+            ckpt_path="checkpoints/DreamDojo/LAM_400k.ckpt",
         )
 
         # 7. training states

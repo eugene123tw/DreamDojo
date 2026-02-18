@@ -20,7 +20,7 @@ model:
 data:
   batch_size: 20
   dataset_paths:
-    - datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_post-train
+    - ../../datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_robot
   padding: repeat
   randomize: true
   num_frames: 2
