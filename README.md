@@ -21,7 +21,9 @@
 
 ## 📢 News
 
-- **[2026/02/13]** We released both pretraining and post-training code.
+- **[2026/02/18]** We released both pretraining and post-training code.
+- **[2026/02/18]** We released all pretrained and post-trained checkpoints (2B and 14B).
+- **[2026/02/18]** We released the GR-1 post-training datasets and the evaluation sets.
 - **[2026/02/09]** We released our [paper](https://arxiv.org/abs/2602.06949) on arXiv.
 
 ## 📋 Release Plan
