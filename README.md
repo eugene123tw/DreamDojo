@@ -59,3 +59,5 @@ If you find our work useful, please consider citing us and giving a star to our 
 ## ⚖️ License
 
 DreamDojo source code is released under the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
+
+[![Star History Chart](https://api.star-history.com/svg?repos=NVIDIA/DreamDojo&type=Date)](https://star-history.com/#NVIDIA/DreamDojo&Date)
