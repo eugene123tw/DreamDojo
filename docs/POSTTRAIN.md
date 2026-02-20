@@ -3,9 +3,9 @@
 The training configurations are managed by yaml under `configs`. To launch post-training:
 
 1. Follow the same setup as the pretraining.
-2. Change `load_path` in `cosmos_predict2/experiments/base/action.py` to the pretrained checkpoint and specify its training step. To use our pretrained model, set `load_path` to `checkpoints/DreamDojo/2B_pretrain_140k/` or `checkpoints/DreamDojo/14B_pretrain_140k/`.
+2. Change `load_path` in `cosmos_predict2/experiments/base/action.py` to the pretrained checkpoint and specify its training step. To use our pretrained model, set `load_path` to `checkpoints/DreamDojo/2B_pretrain/iter_000140000/` or `checkpoints/DreamDojo/14B_pretrain/iter_000140000/`.
 3. (Optional) Disable the extraction of latent actions on the fly, as it will be reset to zero.
-4. Send the desired experiment config (e.g., `dreamdojo_2b_480_640_gr1` to use `ab_480_640_gr1.yaml`).
+4. Send the desired experiment config (e.g., `dreamdojo_2b_480_640_gr1` to use `2b_480_640_gr1.yaml`).
     
     ```
     bash launch.sh dreamdojo_2b_480_640_gr1

@@ -179,6 +179,117 @@ _default_groot_config = LazyDict(
     flags={"allow_objects": True},
 )
 
+_default_groot_config_14b = LazyDict(
+    dict(
+        defaults=[
+            DEFAULT_CHECKPOINT_14B.experiment,
+            {"override /model": "action_conditioned_video2world_fsdp_rectified_flow"},
+            {"override /net": "cosmos_v1_14B_action_chunk_conditioned"},
+            {"override /conditioner": "action_conditioned_video_conditioner"},
+            {"override /data_train": "dreamdojo_13frame_480_640_train"},
+            {"override /data_val": "dreamdojo_13frame_480_640_val"},
+            "_self_",
+        ],
+        job=dict(
+            project="cosmos_predict2_action_conditioned",
+            group="cosmos_predict_v2p5",
+            name="2b_groot_action_conditioned",
+        ),
+        optimizer=dict(
+            # lr=2 ** (-14.5),  # 2**(-14.5) = 3.0517578125e-05
+            lr=16e-5,
+            weight_decay=0.1,
+        ),
+        checkpoint=dict(
+            save_iter=5_000,
+            # pyrefly: ignore  # missing-attribute
+            load_path=get_checkpoint_path(DEFAULT_CHECKPOINT_14B.s3.uri),
+            # load_path="/mnt/amlfs-01/shared/shenyuang/cosmos_logs/exp1201/pretrain/checkpoints/iter_000100000/",
+            load_training_state=False,
+            strict_resume=False,
+            load_from_object_store=dict(
+                enabled=False,
+            ),
+            save_to_object_store=dict(
+                enabled=False,
+            ),
+        ),
+        trainer=dict(
+            max_iter=1000000,
+            straggler_detection=dict(enabled=False),
+            callbacks=dict(
+                every_n_sample_reg=dict(
+                    every_n=5000,
+                    do_x0_prediction=False,
+                    guidance=[0],
+                    fps=16,
+                    save_s3=False,
+                ),
+                every_n_sample_ema=dict(
+                    every_n=5000,
+                    do_x0_prediction=False,
+                    guidance=[0],
+                    fps=16,
+                    save_s3=False,
+                ),
+                heart_beat=dict(
+                    save_s3=False,
+                ),
+                iter_speed=dict(
+                    hit_thres=100,
+                    save_s3=False,
+                ),
+                device_monitor=dict(
+                    save_s3=False,
+                ),
+                wandb=dict(
+                    save_s3=False,
+                ),
+                wandb_10x=dict(
+                    save_s3=False,
+                ),
+                dataloader_speed=dict(
+                    save_s3=False,
+                ),
+            ),
+        ),
+        model_parallel=dict(
+            context_parallel_size=1,
+        ),
+        model=dict(
+            config=dict(
+                # Enable LoRA training
+                # use_lora=True,
+                # lora_rank=32,              # Rank of LoRA adaptation matrices
+                # lora_alpha=32,             # LoRA scaling parameter
+                # lora_target_modules="q_proj,k_proj,v_proj,output_proj,mlp.layer1,mlp.layer2",
+                # init_lora_weights=True,    # Properly initialize LoRA weights
+                # NOTE: this should be 1 for the action conditioned model
+                min_num_conditional_frames=1,
+                max_num_conditional_frames=1,
+                # overwrite the probs to disable random num of conditional frames
+                conditional_frames_probs=None,
+                state_t=1 + 12 // 4,
+                net=dict(
+                    action_dim=29,
+                    temporal_compression_ratio=4,
+                    num_action_per_chunk=12,
+                    zero_init_action_embedder=False,
+                ),
+            ),
+        ),
+        dataloader_train=dict(
+            batch_size=4,
+            dataset=dict(
+                num_frames=13,
+                dataset_path="datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR_robot",
+                data_split="train",
+            ),
+        ),
+    ),
+    flags={"allow_objects": True},
+)
+
 # Automatically load all config files from the configs directory
 _configs_dir = Path(__file__).parent.parent.parent.parent / "configs"
 _experiment_configs = {}
@@ -192,7 +303,10 @@ for yaml_file in sorted(_configs_dir.glob("*.yaml")):
     var_name = f"dreamdojo_{experiment_name}"
     
     # Load the config and store in both dict and globals for backward compatibility
-    config = load_experiment_config(experiment_name, _default_groot_config)
+    if "14b" in experiment_name:
+        config = load_experiment_config(experiment_name, _default_groot_config_14b)
+    else:
+        config = load_experiment_config(experiment_name, _default_groot_config)
     _experiment_configs[var_name] = config
     globals()[var_name] = config
 
