@@ -31,7 +31,7 @@ dataloader_train:
   dataset:
     num_frames: 13
     dataset_path:
-      - datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR_robot
+      - datasets/PhysicalAI-Robotics-GR00T-Teleop-GR1/GR1_robot
     data_split: train
     single_base_index: false
     deterministic_uniform_sampling: false
